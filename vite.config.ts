@@ -10,9 +10,9 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, "lib/main.ts"),
-      name: "vue3-plugin-boilerplate",
+      name: "mjk-ui",
       // the proper extensions will be added
-      fileName: "vue3-plugin-boilerplate",
+      fileName: "mjk-ui",
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

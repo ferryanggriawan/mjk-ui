@@ -1,0 +1,27 @@
+@use "../../variable/main.scss" as v;
+
+@each $name, $variant in v.$text-config {
+  .text-#{$name} {
+    font-size: map-get($variant, "size");
+    line-height: map-get($variant, "height");
+
+    @each $n-weight, $v-weight in v.$weight-config {
+      &.#{$n-weight} {
+        font-weight: $v-weight;
+      }
+    }
+
+    @each $name, $colors in v.$colors {
+      $default: map-get($colors, v.$default-key);
+      &.#{$name} {
+        color: $default;
+      }
+
+      @each $index, $color in $colors {
+        &.#{$name}-#{$index} {
+          color: $color;
+        }
+      }
+    }
+  }
+}

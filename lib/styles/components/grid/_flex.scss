@@ -1,0 +1,53 @@
+$grid-count: 12;
+$grid-padding: 16px;
+
+@function get-width($i) {
+  $count: calc($grid-count / $i);
+  @if $i > calc($grid-count / 2) {
+    $count: 1;
+  }
+  $twopadding: calc($grid-padding * 2);
+  $padding: calc($twopadding * $count);
+  $container: calc(100% - $padding);
+  $grid: calc($i / 12);
+  $width: calc($grid * $container);
+
+  @return $width;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .col {
+    flex: 1;
+    padding: $grid-padding;
+    background: red;
+  }
+
+  @for $i from 1 through $grid-count {
+    $width: get-width($i);
+
+    .col-#{$i} {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: $width;
+    }
+  }
+
+  &.align-center {
+    .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+.container.fluid {
+  .row {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}

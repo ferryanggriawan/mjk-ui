@@ -1,0 +1,43 @@
+@use "../function/f-list";
+
+$white: #ffffff;
+$black: #0f0d15;
+
+$list-gray: (#0f0d15, #0f0d15, #34303e, #4a4754, #615e69, #77757f, #8e8c94, #a5a3a9, #bbbabf, #d2d1d4, #e8e8ea, #f9f9f9);
+$list-blue: (#0030cc, #0036e6, #003cff, #1a50ff, #3363ff, #4d77ff, #668aff, #809eff, #99b1ff, #b3c5ff, #ccd8ff, #e6ecff);
+$list-pink: (#c80068, #e10075, #fa0082, #fb1a8f, #fb339b, #fc4da8, #fc4da4, #fd80c1, #fd99cd, #feb3da, #fecce6, #ffe6f3);
+$list-green: (#18ba92, #1bd2a4, #1ee9b6, #1ee9b6, #4bedc5, #62f0cc, #78f2d3, #8ff4db, #a5f6e2, #bcf8e9, #d2fbf0, #d2fbf0);
+$list-yellow: (#ccb243, #e6c84c, #ffde54, #ffe165, #ffe576, #ffe887, #ffeb98, #ffefaa, #fff2bb, #fff5cc, #fff8dd, #fffcee);
+$list-orange: (#cc5801, #e66301, #ff6e01, #ff7d1a, #ff7d1a, #ff7d1a, #ffa867, #ffb780, #ffc599, #ffd4b3, #ffe2cc, #fff1e6);
+$list-red: (#c32021, #dc2425, #f42829, #f53e3e, #f65354, #f65354, #f87e7f, #f87e7f, #fba9a9, #fcbfbf, #fdd4d4, #feeaea);
+$list-purple: (#ae59c6, #c364df, #d96ff8, #dd7df9, #e18cf9, #e49afa, #e8a9fb, #ecb7fc, #ecb7fc, #f4d4fd, #f7e2fe, #fbf1fe);
+
+$grays: f-list.create-shade($list-gray);
+$blues: f-list.create-shade($list-blue);
+$pinks: f-list.create-shade($list-pink);
+$greens: f-list.create-shade($list-green);
+$yellows: f-list.create-shade($list-yellow);
+$oranges: f-list.create-shade($list-orange);
+$reds: f-list.create-shade($list-red);
+$purples: f-list.create-shade($list-purple);
+
+$blue-gradient: linear-gradient(90deg, #00a3ff 0%, #2c58ae 100%) !default;
+$red-gradient: linear-gradient(90deg, #ff0000 0%, #efff8f 100%) !default;
+$green-gradient: linear-gradient(90deg, #dbff00 0%, #00ffd1 100%) !default;
+$purple-gradient: linear-gradient(90deg, #bd00ff 0%, #fa00ff 100%) !default;
+$yellow-gradient: linear-gradient(90deg, #ffb800 0%, #efff8f 100%) !default;
+$pink-gradient: linear-gradient(90deg, #ffb39e 0%, #ffb3d0 100%) !default;
+$gray-gradient: linear-gradient(90deg, #898c90 0%, #dbddde 100%) !default;
+
+$default-key: "3";
+
+$colors: (
+  "gray": $grays,
+  "blue": $blues,
+  "pink": $pinks,
+  "green": $greens,
+  "yellow": $yellows,
+  "orange": $oranges,
+  "red": $reds,
+  "purple": $purples,
+);

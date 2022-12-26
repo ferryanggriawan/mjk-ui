@@ -1,0 +1,21 @@
+@use "sass:map";
+
+@function create-shade($colors) {
+  $shades: ();
+
+  @each $color in $colors {
+    $i: index($colors, $color);
+    $map-color: ("#{$i}": $color);
+    $shades: map.merge($shades, $map-color);
+  }
+
+  @return $shades;
+}
+
+@function get-shade($shades, $str) {
+  @each $name, $shade in $shades {
+    @if ($name == $str) {
+      @return $shade;
+    }
+  }
+}

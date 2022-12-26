@@ -1,4 +1,4 @@
-# vue3-plugin-boilerplate
+# MJK UI Vue Framework
 
 This template should help get you started developing package Vue 3 in Vite.
 
