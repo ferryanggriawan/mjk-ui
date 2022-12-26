@@ -1,5 +1,19 @@
 $grid-count: 12;
-$grid-padding: 16px;
+$grid-padding: 12px;
+$justifies: (
+  "center": center,
+  "start": flex-start,
+  "end": flex-end,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly,
+);
+$aligns: (
+  "center": center,
+  "start": flex-start,
+  "end": flex-end,
+  "baseline": baseline,
+);
 
 @function get-width($i) {
   $count: calc($grid-count / $i);
@@ -15,15 +29,64 @@ $grid-padding: 16px;
   @return $width;
 }
 
+@mixin android-breakpoint($i) {
+  @media only screen and (min-width: 100px) and (max-width: 480px) {
+    .col-sm-#{$i} {
+      flex-basis: 100%;
+    }
+    .col-md-#{$i} {
+      flex-basis: 100%;
+    }
+    .col-lg-#{$i} {
+      flex-basis: 100%;
+    }
+  }
+}
+
+@mixin tablet-breakpoint($i) {
+  @media only screen and (min-width: 480px) and (max-width: 780px) {
+    .col-md-#{$i} {
+      flex-basis: 100%;
+    }
+    .col-lg-#{$i} {
+      flex-basis: 100%;
+    }
+  }
+}
+
+@mixin tablet-mini-laptop-breakpoint($i) {
+  @media only screen and (min-width: 780px) and (max-width: 1080px) {
+    .col-lg-#{$i} {
+      flex-basis: 100%;
+    }
+  }
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+
+  // row justify
+  @each $name, $value in $justifies {
+    &.justify-#{$name} {
+      justify-content: $value;
+    }
+  }
+
+  // row align
+  @each $name, $value in $aligns {
+    &.align-#{$name} {
+      .col {
+        display: flex;
+        flex-direction: column;
+        justify-content: $value;
+      }
+    }
+  }
 
   .col {
     flex: 1;
     padding: $grid-padding;
-    background: red;
   }
 
   @for $i from 1 through $grid-count {
@@ -34,20 +97,26 @@ $grid-padding: 16px;
       flex-shrink: 0;
       flex-basis: $width;
     }
-  }
 
-  &.align-center {
-    .col {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    @each $br in ("sm", "md", "lg") {
+      .col-#{$br}-#{$i} {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: $width;
+      }
     }
-  }
-}
 
-.container.fluid {
-  .row {
+    @include android-breakpoint($i);
+    @include tablet-breakpoint($i);
+    @include tablet-mini-laptop-breakpoint($i);
+  }
+
+  &.fluid {
     margin: 0 auto;
     max-width: 90%;
+  }
+
+  &.no-wrap {
+    flex-wrap: nowrap;
   }
 }
