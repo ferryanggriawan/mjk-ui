@@ -6,10 +6,10 @@
 
 <script lang="ts" setup>
 import { reactive } from "vue";
-import { classMapping } from "./row.main";
-import { EnumAlign, EnumJustify, type Align, type Justify } from "./row.type";
+import { classMapping } from "./option";
+import { EnumAlign, EnumJustify, type Align, type Justify } from "./type";
 
-interface RowProps {
+export interface RowProps {
   justify?: Justify;
   align?: Align;
   fluid?: boolean;

@@ -1,4 +1,4 @@
-import { EnumAlign, EnumJustify } from "./row.type";
+import { EnumAlign, EnumJustify } from "./type";
 
 export function classMapping(props: any): Object {
   return {
@@ -15,3 +15,7 @@ export function classMapping(props: any): Object {
     fluid: props.fluid,
   };
 }
+
+const RowOption = {};
+
+export default RowOption;

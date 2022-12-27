@@ -17,3 +17,10 @@ export enum EnumAlign {
 
 export type Justify = "center" | "start" | "end" | "between" | "around" | "evenly" | "";
 export type Align = "center" | "start" | "end" | "";
+
+const RowType = {
+  EnumAlign,
+  EnumJustify,
+};
+
+export default RowType;
