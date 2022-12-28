@@ -4,6 +4,12 @@
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: "Row",
+};
+</script>
+
 <script lang="ts" setup>
 import { reactive } from "vue";
 import { classMapping } from "./option";

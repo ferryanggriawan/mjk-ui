@@ -2,7 +2,7 @@ import type { App } from "vue";
 
 import "./styles/main.scss";
 
-import Text from "./components/Text.vue";
+import Text from "./components/typography/text/main.vue";
 import Row from "./components/grid/row/main.vue";
 import Col from "./components/grid/col/main.vue";
 
