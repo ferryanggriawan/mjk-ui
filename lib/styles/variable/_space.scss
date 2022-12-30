@@ -1,0 +1,28 @@
+@for $n from 1 through 48 {
+  $val: 2px * $n;
+  @each $name, $key in ("m": "margin", "p": "padding") {
+    .#{$name}a-#{$n} {
+      #{$key}: $val;
+    }
+    .#{$name}x-#{$n} {
+      #{$key}-left: $val;
+      #{$key}-right: $val;
+    }
+    .#{$name}y-#{$n} {
+      #{$key}-top: $val;
+      #{$key}-bottom: $val;
+    }
+    .#{$name}l-#{$n} {
+      #{$key}-left: $val;
+    }
+    .#{$name}r-#{$n} {
+      #{$key}-right: $val;
+    }
+    .#{$name}t-#{$n} {
+      #{$key}-top: $val;
+    }
+    .#{$name}b-#{$n} {
+      #{$key}-bottom: $val;
+    }
+  }
+}
