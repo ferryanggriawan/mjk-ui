@@ -15,8 +15,8 @@ export enum EnumThemes {
   accent = "accent",
 }
 
-export type Colors = typeof EnumColors | typeof EnumThemes;
-export type Themes = typeof EnumThemes;
+export type Colors = keyof typeof EnumColors | keyof typeof EnumThemes;
+export type Themes = keyof typeof EnumThemes;
 
 const MjkType = {
   EnumColors,

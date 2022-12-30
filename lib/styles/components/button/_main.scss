@@ -1,18 +1,147 @@
+@use "sass:list";
+@use "../../variable/main.scss" as v;
+
+@mixin btn-outline($pad-x, $pad-y) {
+  $p: $pad-y - 1px;
+  &.btn-outline {
+    border-width: 1px;
+    border-style: solid;
+    border-color: list.nth(v.$list-blue, 1);
+    padding: $p $pad-x;
+  }
+}
+
+@mixin btn-underline($pad-x, $pad-y) {
+  $p: $pad-y - 1px;
+  &.btn-underline {
+    padding: $p $pad-x;
+    border-bottom-width: 2px;
+    border-style: solid;
+    border-color: list.nth(v.$list-blue, 1);
+  }
+}
+
+$default-btn-radius: 8px;
+$small-padding-y: 6px;
+$small-padding-x: 16px;
+$normal-padding-y: 8px;
+$normal-padding-x: 22px;
+$large-padding-y: 10px;
+$large-padding-x: 28px;
+
+$default-btn-color: list.nth(v.$list-blue, 3);
+
 $sizes: (
   "small": (
-    "padding": 2px 12px,
+    "padding": $small-padding-y $small-padding-x,
+    "x": $small-padding-x,
+    "y": $small-padding-y,
+    "square": 32px,
   ),
   "normal": (
-    "padding": 6px 24px,
+    "padding": $normal-padding-y $normal-padding-x,
+    "x": $normal-padding-x,
+    "y": $normal-padding-y,
+    "square": 36px,
   ),
   "large": (
-    "padding": 10px 28px,
+    "padding": $large-padding-y $large-padding-x,
+    "x": $large-padding-x,
+    "y": $large-padding-y,
+    "square": 40px,
   ),
 );
+$normal-size: map-get(
+  $map: $sizes,
+  $key: "normal",
+);
+
+.btn {
+  padding: map-get($normal-size, "padding");
+  border: 0 none;
+  background: $default-btn-color;
+  color: v.$white;
+  border-radius: 6px;
+  line-height: 18px;
+}
+
+.btn-outline {
+  border: 1px;
+  border-style: solid;
+  border-color: $default-btn-color;
+  padding: ($normal-padding-y - 1px) $normal-padding-x;
+}
+
+.btn-text {
+  background: v.$white;
+  color: $default-btn-color;
+}
+
+.btn-underline {
+  border-bottom-width: 2px;
+  border-style: solid;
+  border-color: $default-btn-color;
+  padding: ($normal-padding-y - 1px) $normal-padding-x;
+  color: $default-btn-color;
+  background: v.$white;
+}
 
 @each $size, $props in $sizes {
+  $pad: map-get($props, "padding");
+  $pad-x: map-get($props, "x");
+  $pad-y: map-get($props, "y");
+
   .btn-#{$size} {
-    height: map-get($props, "height");
-    padding: map-get($props, "padding");
+    padding: $pad;
+
+    @include btn-outline($pad-x, $pad-y);
+    @include btn-underline($pad-x, $pad-y);
+
+    &.btn-square {
+      width: map-get($props, "square");
+      height: map-get($props, "square");
+      padding: $pad-y 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: unset;
+      text-align: center;
+    }
+
+    &.btn-round {
+      width: map-get($props, "square");
+      height: map-get($props, "square");
+      padding: $pad-y 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: unset;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 0;
+    }
+  }
+}
+
+@each $name, $colors in v.$colors {
+  $cl: map-get($colors, v.$default-key);
+  .btn-#{$name} {
+    background: $cl;
+    color: white;
+
+    &.btn-outline {
+      background: v.$white;
+      color: $cl;
+      border-color: $cl;
+    }
+
+    &.btn-text {
+      background: v.$white;
+      color: $cl;
+    }
+
+    &.btn-underline {
+      background: v.$white;
+      color: $cl;
+      border-color: $cl;
+    }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <button class="btn" :class="classMap" :style="styleMap">
+  <button class="btn" :class="[classMap, colorMap]" :style="styleMap">
     <slot />
   </button>
 </template>
@@ -13,8 +13,8 @@ export default {
 <script setup lang="ts">
 import { reactive, withDefaults, defineProps } from "vue";
 import type { Colors } from "../type";
-import { EnumBtnSizeType, type BtnShape, type BtnSize, type BtnVariant } from "./type";
-import { mappingClass, mappingStyles } from "./option";
+import type { BtnShape, BtnSize, BtnVariant } from "./type";
+import { mappingBtnColor, mappingClass, mappingStyles } from "./option";
 
 export interface BtnProps {
   size?: BtnSize;
@@ -24,17 +24,16 @@ export interface BtnProps {
   block?: boolean | undefined;
 }
 
-const props = withDefaults(defineProps<BtnProps>(), {});
-
-const { size } = props;
-
-if (!(size! in EnumBtnSizeType)) {
-  console.log("here", size);
-}
+const props = withDefaults(defineProps<BtnProps>(), {
+  size: "",
+});
 
 const classes = mappingClass(props);
 const classMap = reactive(classes);
 
 const styles = mappingStyles(props);
 const styleMap = reactive<any>(styles);
+
+const colors = mappingBtnColor(props);
+const colorMap = reactive<any>(colors);
 </script>
