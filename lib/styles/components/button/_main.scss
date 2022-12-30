@@ -63,6 +63,7 @@ $normal-size: map-get(
   color: v.$white;
   border-radius: 6px;
   line-height: 18px;
+  cursor: pointer;
 }
 
 .btn-outline {
@@ -144,4 +145,9 @@ $normal-size: map-get(
       border-color: $cl;
     }
   }
+}
+
+.btn-block {
+  width: 100%;
+  display: block;
 }

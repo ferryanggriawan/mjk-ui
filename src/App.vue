@@ -28,6 +28,12 @@ import TextSection from "./section/Text.vue";
         <Btn size="large" type="text">Large</Btn>
         <Btn size="large" type="underline">Large</Btn>
       </Col>
+      <Col cols="12">
+        <div>Block</div>
+        <Btn block size="small">Large</Btn>
+        <Btn block size="normal">Large</Btn>
+        <Btn block size="large">Large</Btn>
+      </Col>
     </Row>
   </section>
   <!-- Text & Heading -->

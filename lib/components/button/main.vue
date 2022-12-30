@@ -21,7 +21,7 @@ export interface BtnProps {
   color?: Colors;
   type?: BtnVariant;
   shape?: BtnShape;
-  block?: boolean | undefined;
+  block?: boolean;
 }
 
 const props = withDefaults(defineProps<BtnProps>(), {
