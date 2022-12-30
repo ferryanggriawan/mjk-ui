@@ -1,0 +1,18 @@
+$sizes: (
+  "small": (
+    "padding": 2px 12px,
+  ),
+  "normal": (
+    "padding": 6px 24px,
+  ),
+  "large": (
+    "padding": 10px 28px,
+  ),
+);
+
+@each $size, $props in $sizes {
+  .btn-#{$size} {
+    height: map-get($props, "height");
+    padding: map-get($props, "padding");
+  }
+}

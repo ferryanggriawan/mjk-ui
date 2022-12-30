@@ -1,6 +1,7 @@
 @use "../variable/main.scss" as v;
 @import "./typography/text";
 @import "./grid/flex";
+@import "./button/main";
 
 * {
   margin: 0;
