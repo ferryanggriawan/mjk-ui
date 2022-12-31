@@ -51,3 +51,9 @@ $text-config: (
     "height": 12px,
   ),
 );
+
+@each $name in ("center", "right", "left") {
+  .text-#{$name} {
+    text-align: #{$name};
+  }
+}

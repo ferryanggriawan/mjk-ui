@@ -7,7 +7,19 @@ import ButtonSection from "./section/Button.vue";
   <!-- Button -->
   <ButtonSection />
 
-  <div class="divider-wrapper">
+  <Divider />
+
+  <section>
+    <Row>
+      <Col class="text-center">asdasd</Col>
+      <Divider vertical />
+      <Col cols="10" class="text-center">asdasd</Col>
+      <Divider vertical />
+      <Col>asdasd</Col>
+    </Row>
+  </section>
+
+  <div>
     <div class="divider"></div>
   </div>
 
