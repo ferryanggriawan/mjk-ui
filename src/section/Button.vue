@@ -28,8 +28,8 @@
       </Col>
       <Col cols="12">
         <div class="pb-3">Block</div>
-        <Btn class="mb-5" block size="small">Large</Btn>
-        <Btn class="mb-5" block size="normal">Large</Btn>
+        <Btn class="mb-5" block size="small">Small</Btn>
+        <Btn class="mb-5" block size="normal">Default</Btn>
         <Btn class="mb-5" block size="large">Large</Btn>
       </Col>
     </Row>
