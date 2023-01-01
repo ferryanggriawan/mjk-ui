@@ -3,7 +3,10 @@
     <Row>
       <Col cols="12">
         <div class="pb-3">Small</div>
-        <Btn class="mx-3" size="small">Small</Btn>
+        <Btn class="mx-3" size="small" color="red">
+          <Icon icon="fa-home"></Icon>
+          Small
+        </Btn>
         <Btn class="mx-3" size="small" type="fill">Small</Btn>
         <Btn class="mx-3" size="small" type="outline">Small</Btn>
         <Btn class="mx-3" size="small" type="text">Small</Btn>
@@ -12,7 +15,7 @@
       <Col cols="12">
         <div class="pb-3">Normal | Default</div>
         <Btn class="mx-3" type="fill">Normal</Btn>
-        <Btn class="mx-3" type="outline">Normal</Btn>
+        <Btn class="mx-3" type="outline" color="red"> <Icon icon="fa-home"></Icon> Normal</Btn>
         <Btn class="mx-3" type="text">Normal</Btn>
         <Btn class="mx-3" type="underline">Normal</Btn>
       </Col>

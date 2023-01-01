@@ -1,0 +1,6 @@
+@use "../../variable/name" as n;
+
+.#{n.$prefix}-icon {
+  height: 14px;
+  width: 14px;
+}
