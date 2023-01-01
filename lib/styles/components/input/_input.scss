@@ -1,0 +1,136 @@
+@use "sass:list";
+@use "../../variable/main.scss" as v;
+@use "../icon/main" as icon;
+
+$input-size: 32px;
+$default-color: list.nth(v.$list-gray, 7);
+$active-color: list.nth(v.$list-blue, 1);
+$invalid-color: list.nth(v.$list-red, 1);
+$valid-color: list.nth(v.$list-green, 1);
+$disable-color: list.nth(v.$list-gray, 5);
+
+@mixin input-active-type($type, $color) {
+  &.#{$type} {
+    border-color: $color;
+
+    input {
+      color: $color;
+      caret-color: $color;
+    }
+
+    input::placeholder {
+      color: rgba($color, 0.7);
+    }
+
+    .#{v.$prefix}-input-wrapper {
+      @include input-append($color);
+      @include input-prepend($color);
+      @include icon.icon-color($color);
+    }
+  }
+}
+
+@mixin input-disabled($color) {
+  &.disabled {
+    border-color: $color;
+    background-color: rgba($color, 0.15);
+
+    input {
+      color: $color;
+      caret-color: $color;
+    }
+
+    input::placeholder {
+      color: rgba($color, 0.7);
+    }
+
+    .#{v.$prefix}-input-wrapper {
+      @include input-append($color);
+      @include input-prepend($color);
+      @include icon.icon-color($color);
+    }
+  }
+}
+
+@mixin input-content($color) {
+  .#{v.$prefix}-input-content > input:focus,
+  .#{v.$prefix}-input-content > input {
+    outline: none;
+  }
+
+  .#{v.$prefix}-input-content > input {
+    border-style: none;
+    border-width: 0;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background: transparent;
+  }
+
+  input {
+    color: $color;
+    caret-color: $color;
+  }
+
+  input::placeholder {
+    color: rgba($color, 0.9);
+  }
+}
+
+@mixin input-wrapper-grid($size) {
+  .#{v.$prefix}-input-content {
+    flex: 1;
+  }
+
+  .#{v.$prefix}-input-prepend,
+  .#{v.$prefix}-input-append {
+    width: $size;
+    text-align: center;
+  }
+}
+
+@mixin input-prepend($color) {
+  .#{v.$prefix}-input-prepend {
+    border-right: 1px solid $color;
+  }
+}
+
+@mixin input-append($color) {
+  .#{v.$prefix}-input-append {
+    border-left: 1px solid $color;
+  }
+}
+
+@mixin create-default-input($color, $active, $invalid, $valid, $disable) {
+  @include input-active-type("active", $active);
+  @include input-active-type("invalid", $invalid);
+  @include input-active-type("valid", $valid);
+  @include input-active-type("readonly", $color);
+  @include input-disabled($disable);
+
+  .#{v.$prefix}-input-wrapper {
+    @include input-content($color);
+
+    @include input-wrapper-grid($input-size);
+    @include input-prepend($color);
+    @include input-append($color);
+
+    @include icon.icon-color($color);
+
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 100%;
+    background: transparent;
+  }
+
+  height: $input-size;
+  border-radius: 8px;
+  border: 1px solid $color;
+  padding: 0 0 1px 0;
+  background-color: v.$white;
+}
+
+.#{v.$prefix}-input {
+  @include create-default-input($default-color, $active-color, $invalid-color, $valid-color, $disable-color);
+}

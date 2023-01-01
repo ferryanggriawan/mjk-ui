@@ -9,9 +9,11 @@ import Col from "./components/grid/col/main.vue";
 import Btn from "./components/button/main.vue";
 import Divider from "./components/divider/main.vue";
 import Icon from "./components/icon/main.vue";
+import MjkDirective from "./directives/directive";
 
 export const MjkUi = (app: App) => {
   app.provide("icon", "fa");
+  MjkDirective.register(app);
 
   app.component("Text", Text);
   app.component("Row", Row);
