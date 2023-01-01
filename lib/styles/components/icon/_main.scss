@@ -1,6 +1,15 @@
+@use "../../variable/main.scss" as v;
 @use "../../variable/name" as n;
 
 .#{n.$prefix}-icon {
   height: 14px;
   width: 14px;
+}
+
+@each $name, $colors in v.$colors {
+  $cl: map-get($colors, v.$default-key);
+
+  .icon-#{$name} > path {
+    color: $cl;
+  }
 }

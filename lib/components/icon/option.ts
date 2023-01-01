@@ -1,3 +1,4 @@
+import { EnumColors, EnumThemes } from "../type";
 import type { IconProps } from "./main.vue";
 
 export function mappingIconStyle(props: IconProps): any {
@@ -24,6 +25,23 @@ export function mappingIconStyle(props: IconProps): any {
     display: "inline-block",
     lineHeight: `${size}px`,
   };
+}
+
+export function mappingIconColor(props: IconProps): Object {
+  const { color } = props;
+  const IconColor = {
+    ...EnumColors,
+    ...EnumThemes,
+  };
+
+  if (color! in IconColor) {
+    const key = `icon-${color}`;
+    return {
+      [key]: true,
+    };
+  }
+
+  return {};
 }
 
 const IconOption = {};

@@ -4,7 +4,7 @@ import ButtonSection from "./section/Button.vue";
 </script>
 
 <template>
-  <Icon icon="fa-home"></Icon>
+  <Icon icon="fa-home" color="purple"></Icon>
 
   <!-- Button -->
   <ButtonSection />
