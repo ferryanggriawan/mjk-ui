@@ -1,5 +1,5 @@
 <template>
-  <div class="col" :class="classMap">
+  <div class="m-col" :class="classMap">
     <slot />
   </div>
 </template>

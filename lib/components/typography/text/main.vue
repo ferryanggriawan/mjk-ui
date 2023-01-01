@@ -11,7 +11,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { reactive, withDefaults } from "vue";
+import { reactive } from "vue";
 import { EnumTextVariant, EnumTextWeight, type TextSize, type TextVariant, type TextWeight } from "./type";
 import { mappingText } from "./option";
 

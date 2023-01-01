@@ -19,7 +19,7 @@ export function mappingClass(props: BtnProps): Object {
     "btn-square": props.shape == EnumBtnShape.square,
     "btn-round": props.shape == EnumBtnShape.round,
 
-    "btn-block": props.block,
+    "m-btn-block": props.block,
   };
 }
 

@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "../../variable/main.scss" as v;
+@use "../../variable/name" as n;
 
 @mixin btn-outline($pad-x, $pad-y) {
   $p: $pad-y - 1px;
@@ -56,7 +57,7 @@ $normal-size: map-get(
   $key: "normal",
 );
 
-.btn {
+.#{n.$prefix}-btn {
   padding: map-get($normal-size, "padding");
   border: 0 none;
   background: $default-btn-color;
@@ -147,7 +148,7 @@ $normal-size: map-get(
   }
 }
 
-.btn-block {
+.#{n.$prefix}-btn-block {
   width: 100%;
   display: block;
 }

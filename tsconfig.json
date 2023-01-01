@@ -5,7 +5,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./lib/*"]
-    }
+    },
+    "types": ["node"]
   },
 
   "references": [

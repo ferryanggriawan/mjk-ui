@@ -17,6 +17,7 @@ export enum EnumThemes {
 
 export type Colors = keyof typeof EnumColors | keyof typeof EnumThemes;
 export type Themes = keyof typeof EnumThemes;
+export const classPrefix = "m";
 
 const MjkType = {
   EnumColors,

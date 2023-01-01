@@ -1,6 +1,6 @@
 import type { App } from "vue";
 
-import "./styles/main.scss";
+import "./main.style";
 
 import Text from "./components/typography/text/main.vue";
 import Row from "./components/grid/row/main.vue";

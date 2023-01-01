@@ -1,3 +1,5 @@
+@use "../../variable/name" as n;
+
 $grid-count: 12;
 $grid-padding: 12px;
 $justifies: (
@@ -62,7 +64,7 @@ $aligns: (
   }
 }
 
-.row {
+.#{n.$prefix}-row {
   display: flex;
   flex-wrap: wrap;
 
@@ -84,7 +86,7 @@ $aligns: (
     }
   }
 
-  .col {
+  .#{n.$prefix}-col {
     flex: 1;
     padding: $grid-padding;
   }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="divider" :class="{ vertical: props.vertical }"></div>
+    <div class="divider" :class="{ vertical: vertical }"></div>
   </div>
 </template>
 

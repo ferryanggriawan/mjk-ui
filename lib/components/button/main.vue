@@ -1,5 +1,5 @@
 <template>
-  <button class="btn" :class="[classMap, colorMap]" :style="styleMap">
+  <button class="m-btn" :class="[classMap, colorMap]" :style="styleMap">
     <slot />
   </button>
 </template>
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { reactive, withDefaults } from "vue";
+import { reactive } from "vue";
 import type { Colors } from "../type";
 import type { BtnShape, BtnSize, BtnVariant } from "./type";
 import { mappingBtnColor, mappingClass, mappingStyles } from "./option";
