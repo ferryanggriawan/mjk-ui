@@ -11,7 +11,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { reactive, withDefaults, defineProps } from "vue";
+import { reactive, withDefaults } from "vue";
 import type { Colors } from "../type";
 import type { BtnShape, BtnSize, BtnVariant } from "./type";
 import { mappingBtnColor, mappingClass, mappingStyles } from "./option";
