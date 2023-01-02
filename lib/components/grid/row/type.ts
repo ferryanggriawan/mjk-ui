@@ -1,3 +1,10 @@
+import type Component from "./main.vue";
+declare module "vue" {
+  interface GlobalComponents {
+    MRow: typeof Component;
+  }
+}
+
 export enum EnumJustify {
   center = "center",
   start = "start",

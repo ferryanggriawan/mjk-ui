@@ -1,3 +1,10 @@
+import type Component from "./main.vue";
+declare module "vue" {
+  interface GlobalComponents {
+    MBtn: typeof Component;
+  }
+}
+
 export enum EnumBtnSizeType {
   small = "small",
   normal = "normal",

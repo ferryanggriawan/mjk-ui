@@ -1,3 +1,11 @@
+import type Component from "./main.vue";
+
+declare module "vue" {
+  interface GlobalComponents {
+    MText: typeof Component;
+  }
+}
+
 export enum EnumTextVariant {
   h1 = "h1",
   h2 = "h2",

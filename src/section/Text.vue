@@ -1,36 +1,36 @@
 <template>
   <section>
-    <Row>
-      <Col cols="5">
+    <MRow>
+      <MCol cols="5">
         <div>
-          <Text variant="h2" weight="bold">Heading</Text>
+          <MText variant="h2" weight="bold">Heading</MText>
         </div>
         <div>
-          <Text>
+          <MText>
             A set of harmonous typography scale with font weight variations. These text style perfectly fit for 4px grid and go well with
             each other.
-          </Text>
+          </MText>
         </div>
-      </Col>
-    </Row>
+      </MCol>
+    </MRow>
 
-    <Row v-for="text in headings">
-      <Col cols="12">
+    <MRow v-for="text in headings">
+      <MCol cols="12">
         <div>
-          <Text variant="h6" weight="bold">{{ text.title }}</Text>
+          <MText variant="h6" weight="bold">{{ text.title }}</MText>
         </div>
-        <Text>Font size: {{ text.size }}px | Line height: {{ text.height }}px | Spacing -2%</Text>
-      </Col>
-      <Col cols="4">
-        <Text :variant="text.variant">{{ text.title }}</Text>
-      </Col>
-      <Col cols="4">
-        <Text :variant="text.variant">{{ text.title }}</Text>
-      </Col>
-      <Col cols="4">
-        <Text :variant="text.variant">{{ text.title }}</Text>
-      </Col>
-    </Row>
+        <MText>Font size: {{ text.size }}px | Line height: {{ text.height }}px | Spacing -2%</MText>
+      </MCol>
+      <MCol cols="4">
+        <MText :variant="text.variant">{{ text.title }}</MText>
+      </MCol>
+      <MCol cols="4">
+        <MText :variant="text.variant">{{ text.title }}</MText>
+      </MCol>
+      <MCol cols="4">
+        <MText :variant="text.variant">{{ text.title }}</MText>
+      </MCol>
+    </MRow>
   </section>
 </template>
 

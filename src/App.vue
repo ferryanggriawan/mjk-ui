@@ -7,8 +7,8 @@ function test() {}
 
 <template>
   <section>
-    <Row>
-      <Col lg="4" v-click-outside="test">
+    <MRow>
+      <MCol lg="4" v-click-outside="test">
         <div class="m-input">
           <div class="m-input-wrapper">
             <div class="m-input-content">
@@ -16,16 +16,16 @@ function test() {}
             </div>
           </div>
         </div>
-      </Col>
-      <Col lg="4">
+      </MCol>
+      <MCol lg="4">
         <div class="m-input">
           <div class="m-input-wrapper">
             <div class="m-input-content">
               <input type="text" placeholder="Search..." />
             </div>
           </div></div
-      ></Col>
-    </Row>
+      ></MCol>
+    </MRow>
   </section>
 
   <!-- Button -->

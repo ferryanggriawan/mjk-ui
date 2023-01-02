@@ -2,6 +2,12 @@
   <i class="m-icon" :class="[main, props.icon, color]" :style="style"></i>
 </template>
 
+<script lang="ts">
+export default {
+  name: "Icon",
+};
+</script>
+
 <script setup lang="ts">
 import { inject, reactive } from "vue";
 import type { Colors } from "../type";

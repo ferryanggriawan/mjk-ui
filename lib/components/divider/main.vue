@@ -4,6 +4,12 @@
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: "Divider",
+};
+</script>
+
 <script setup lang="ts">
 export interface DividerProps {
   vertical?: boolean;
